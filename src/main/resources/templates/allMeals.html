@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Meals</title>
+</head>
+<body>
+	<div>
+		<h2>Meals</h2>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Meal Name</th>
+				<th>Price</th>
+				<th>Stock</th>
+			</tr>
+			<tr th:each="m : ${mealList}">
+				<td th:text="${m.id}">ID</td>
+				<td th:text="${m.meal_name}">Meal Name</td>
+				<td th:text="${m.price}">Price</td>
+				<td th:text="${m.stock}">Stock</td>	
+			</tr>
+		</table>
+		<p>
+			<a href="/">Home</a>
+		</p>
+	</div>
+</body>
+</html>

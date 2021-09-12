@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>New Meal</title>
+</head>
+<body>
+	<div>
+		<h2>New Meal</h2>
+		<form th:action="@{/addMeal}" th:object="${meal}" th:method="POST">
+			<table>
+				<tr>
+					<td>Meal ID</td>
+					<td><input type="text" th:field="*{id}"/></td>
+				</tr>
+
+				<tr>
+					<td>Meal Name</td>
+					<td><input type="text" th:field="*{meal_name}"/></td>
+				</tr>
+				<tr>
+					<td>Price</td>
+					<td><input type="text"  th:field="*{price}"/></td>
+				</tr>
+				<tr>
+					<td>Stock</td>
+					<td><input type="text" th:field="*{stock}"/></td>
+				</tr>
+				<tr>
+                    <td><input type="submit" value="Submit"/></td>
+                    <td></td>
+                </tr>
+			</table>
+		
+		</form>
+	</div>
+</body>
+</html>

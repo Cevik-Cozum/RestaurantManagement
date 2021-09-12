@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+	<div>
+		<h2>Delete Customer</h2>
+		<form th:action="@{/deleteCustomer}" th:object="${customer}" th:method="delete">
+			<table>
+				<tr>
+					<td>Customer ID</td>
+					<td><input type="text" th:field="*{id}"/></td>
+				</tr>
+			</table>
+		
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Orders</title>
+</head>
+<body>
+	<div>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">ORDERS</button>
+		<table class = "table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Meal ID</th>
+					<th>Customer ID</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="o : ${ordersList}">
+					<td th:text="${o.id}">ID</td>
+					<td th:text="${o.meal_id}">Meal ID</td>
+					<td th:text="${o.customer_id}">Customer ID</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			<a href="/">Home</a>
+		</p>
+	</div>
+	
+	<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form th:action=@{/addOrders} method="post">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">ID:        </label>
+            <input type="text" class="form-control" id="recipient-name" name="id">
+          </div>
+          
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Meal ID:    </label>
+            <input type="text" class="form-control" id="recipient-name" name="meal_id">
+          </div>
+          
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Customer ID:</label>
+            <input type="text" class="form-control" id="recipient-name" name="customer_id">
+          </div>
+          
+          <div class="form-group">
+          	<button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

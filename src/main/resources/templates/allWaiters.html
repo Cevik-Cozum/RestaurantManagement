@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Waiters</title>
+</head>
+<body>
+<div>
+		<h2>Waiters</h2>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Salary</th>
+				<th>Score</th>
+			</tr>
+			<tr th:each="w : ${waiterList}">
+				<td th:text="${w.id}">ID</td>
+				<td th:text="${w.name}">Name</td>
+				<td th:text="${w.salary}">Salary</td>
+				<td th:text="${w.score}">Score</td>
+			</tr>
+		</table>
+		<p>
+			<a href="/">Home</a>
+		</p>
+	</div>
+	
+	
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Customers</title>
+</head>
+<body>
+<div>
+		<h2>Customers</h2>
+		<table>
+		<thead>
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Address</th>
+				</tr>
+	   </thead>
+	   <tbody>
+				<tr th:each="c : ${customerList}">
+					<td th:text="${c.id}">ID</td>
+					<td th:text="${c.name}">Customer Name</td>
+					<td th:text="${c.address}">Address</td>
+					<td th:text="${c.waiter_id}">Waiter ID</td>
+					
+				</tr>
+		</tbody>
+		</table>
+		<p>
+			<a href="/">Home</a>
+		</p>
+	</div>
+	
+
+	
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org" >
+<head>
+<meta charset="UTF-8">
+<title>New Waiter</title>
+</head>
+<body>
+	<div>
+		<h2>New Waiter</h2>
+		<form th:action="@{/addWaiter}" th:object="${waiter}" th:method="POST">
+			<table>
+				<tr>
+					<td>Waiter ID</td>
+					<td><input type="text" th:field="*{id}"/></td>
+				</tr>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" th:field="*{name}"/></td>
+				</tr>
+				<tr>
+					<td>Salary</td>
+					<td><input type="text"  th:field="*{salary}"/></td>
+				</tr>
+				<tr>
+					<td>Score</td>
+					<td><input type="text"  th:field="*{score}"/></td>
+				</tr>
+				<tr>
+                    <td><input type="submit" value="Submit"/></td>
+                    <td></td>
+                </tr>
+			</table>
+		
+		</form>
+	</div>
+</body>
+</html>
